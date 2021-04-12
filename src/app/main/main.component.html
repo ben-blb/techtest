@@ -3,87 +3,20 @@
 		<div class="col-lg-10 header">
 			<h2>Look for people and jobs!</h2>
 			<div class="input-group mb-3">
-				<input type="text" class="form-control" aria-describedby="button-search">
-				<button class="btn btn-outline-secondary" type="button" id="button-search"><i class="fas fa-search"></i></button>
-			</div>
-			<h4>Recent searches:</h4>
-			<div class="row row-scroll">
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
-				<div class="search_item">pene</div>
+				<input type="text" class="form-control" aria-describedby="button-search" [(ngModel)]="searchQ">
+				<button class="btn btn-outline-secondary" type="button" id="button-search" (click)="doSearch()"><i class="fas fa-search"></i></button>
 			</div>
 		</div>
 	</div>
 
 	<div class="row center-row">
 		<div class="col-sm-12 col-lg-4 panel">
-			<h3>Organization</h3>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
+			<h3>People</h3>
+			<a class="panel_item" *ngFor="let people of peopleList" [routerLink]="['/bio/', people.username]">{{people.name}}</a>
 		</div>
 		<div class="col-sm-12 col-lg-4 panel">
 			<h3>Jobs</h3>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			
+			<a class="panel_item" *ngFor="let job of jobList" [routerLink]="['/job/', job.id]">{{job.objective}}</a>
 		</div>
 	</div>
 </div>
