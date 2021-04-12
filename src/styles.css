@@ -23,6 +23,15 @@
 	border-radius: 20px;
 }
 
+.vertical-scroll::-webkit-scrollbar {
+	width: 5px;
+}
+
+.vertical-scroll::-webkit-scrollbar-thumb {
+	background: #46494C;
+	border-radius: 20px;
+}
+
 html, body{
 	width: 100%;
 	height: 100%;
@@ -41,4 +50,11 @@ html, body{
 	padding: 0.5%;
 	width: 95%;
 	margin: auto;
+}
+
+.sticky{
+	top: 0;
+	position: sticky;
+	background-color: white;
+	padding-bottom: 0.1%;
 }
