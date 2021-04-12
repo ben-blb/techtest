@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MainComponent } from './main/main.component';
+import { BioComponent } from './bio/bio.component';
+import { JobComponent } from './job/job.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    BioComponent,
+    JobComponent
   ],
   imports: [
     BrowserModule,
