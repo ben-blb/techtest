@@ -3,42 +3,45 @@
 		<div class="page-subheader">
 			<div class="row center-row row-scroll">
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-map-marker-alt"></i> Location: noseXD</div>
+					<div class="subheader-item"><i class="fas fa-map-marker-alt"></i> Location: {{actualJob.place.remote ? 'Remote' : actualJob.place.location[0]}}</div>
 				</div>
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-hourglass"></i> Timezone: IDK</div>
+					<div class="subheader-item"><i class="fas fa-hourglass"></i> {{actualJob.timezones[0]}} to {{actualJob.timezones[1]}}</div>
 				</div>
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-dollar-sign"></i> Compensation: 69/hr</div>
+					<div class="subheader-item"><i class="fas fa-dollar-sign"></i> {{actualJob.compensation.minAmount}} - {{actualJob.compensation.maxAmount}} {{actualJob.compensation.currency}}</div>
 				</div>
 			</div>
 		</div>
 		<div class="page-header">
 			<div class="header-info vertical-scroll">
 				<div class="sticky">
-					<h3>Name</h3>
-					<h4>Headline</h4>
+					<h3>{{actualJob.objective}}</h3>
+					<h4>{{actualJob.owner.name}}</h4>
 				</div>
-				<p>SummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummary</p>
+				<p style="white-space: pre-line">
+					<b>{{actualJob.details[3].code | titlecase }}</b><br>
+					{{actualJob.details[3].content}}
+					<br><b>{{actualJob.details[4].code | titlecase }}</b>
+					{{actualJob.details[4].content}}
+					<br><b>{{actualJob.details[5].code | titlecase }}</b>
+					{{actualJob.details[5].content}}
+					<br><b>{{actualJob.details[6].code | titlecase }}</b>
+					{{actualJob.details[6].content}}
+					<br><b>{{actualJob.details[7].code | titlecase }}</b>
+					{{actualJob.details[7].content}}
+					<br><b>{{actualJob.details[8].code | titlecase }}</b>
+					{{actualJob.details[8].content}}
+					<br><b>{{actualJob.details[9].code | titlecase }}</b>
+					{{actualJob.details[9].content}}
+
+				</p>
 			</div>
 		</div>
 		<div class="page-subheader">
 			<h5>Skills:</h5>
 			<div class="row vertical-center center-row row-scroll">
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Location: noseXD</div>
-				<div class="subheader-item">Language: IDK</div>
-				<div class="subheader-item">Compensation: 69/hr</div>
+				<div *ngFor="let item of actualJob.strengths" class="subheader-item">{{item.name}}</div>
 			</div>
 		</div>
 	</div>

@@ -43,6 +43,10 @@ html, body{
 	justify-content: center;
 }
 
+.vertical-center{
+	align-items: center;
+}
+
 .row-scroll{
 	flex-wrap: nowrap;
 	overflow: hidden;
