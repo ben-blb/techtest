@@ -1,25 +1,25 @@
 <div class="paper">
 	<div class="page">
 		<div class="page-header">
-			<img src="http://21dev.io/smolame.jpg">
+			<img [src]="(user.person.picture ? user.person.picture : 'http://21dev.io/smolame.jpg')">
 			<div class="header-info vertical-scroll">
 				<div class="sticky">
-					<h3>Name</h3>
-					<h4>Headline</h4>
+					<h3>{{user.person.name}}</h3>
+					<h4>{{user.person.professionalHeadline}}</h4>
 				</div>
-				<p>SummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummarySummary</p>
+				<p>{{user.person.summaryOfBio}}</p>
 			</div>
 		</div>
 		<div class="page-subheader">
 			<div class="row center-row row-scroll">
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-map-marker-alt"></i> Location: noseXD</div>
+					<div class="subheader-item"><i class="fas fa-map-marker-alt"></i> Location: {{user.person.location.name}}</div>
 				</div>
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-language"></i> Language: IDK</div>
+					<div class="subheader-item"><i class="fas fa-language"></i> Language: <b *ngFor="let lang of user.languages">{{lang.language}}, </b></div>
 				</div>
 				<div class="col-lg">
-					<div class="subheader-item"><i class="fas fa-dollar-sign"></i> Compensation: 69/hr</div>
+					<div class="subheader-item"><i class="fas fa-dollar-sign"></i> Compensation: {{compensation}}</div>
 				</div>
 			</div>
 		</div>
@@ -27,13 +27,13 @@
 			<div class="panel vertical-scroll col-sm-12 col-lg-6">
 				<h3>Experience:</h3>
 				<div class="panel-content">
-					<div class="experience-item">
-						<img src="">
+					<div *ngFor="let job of user.jobs" class="experience-item">
+						<img [src]="(job.organizations[0].picture ? job.organizations[0].picture : 'http://21dev.io/smolame.jpg')">
 						<div class="experience-item-desc">
-							<h4>Job title</h4>
-							<span>Company name</span>
-							<span>Time there from when (months or years)</span>
-							<p>Description</p>
+							<h4>{{job.name}}</h4>
+							<span>{{job.organizations[0].name}} </span><br>
+							<span>{{job.fromMonth}}, {{job.fromYear}} to {{job.toMonth}}, {{job.toYear}}</span>
+							<p *ngFor="let resp of job.responsibilities">{{resp}}</p>
 						</div>
 					</div>
 				</div>
@@ -41,35 +41,13 @@
 			<div class="panel vertical-scroll col-sm-12 col-lg-3">
 				<h3>Skills:</h3>
 				<div class="panel-content">
-					<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
+					<span *ngFor="let xp of user.strengths" class="panel_item">{{xp.name}}</span>
 				</div>
 			</div>
 			<div class="panel vertical-scroll col-sm-12 col-lg-3">
 				<h3>Interests:</h3>
 				<div class="panel-content">
-					<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
-			<span class="panel_item">asdsad</span>
+					<span *ngFor="let xp of user.interests" class="panel_item">{{xp.name}}</span>
 				</div>
 			</div>
 		</div>
