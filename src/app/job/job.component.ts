@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Job } from '../interfaces/job';
 import { ActivatedRoute } from "@angular/router";
 import { ApiService } from '../services/api.service';
 
@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class JobComponent implements OnInit {
 	jobID: string = '';
-	actualJob: any = {};
+	actualJob: Job;
 
 	constructor(private route: ActivatedRoute, private api: ApiService) { }
 
