@@ -1,0 +1,55 @@
+.paper{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--text-black);
+}
+
+.paper .page{
+	width: 90%;
+	height: 90%;
+	background-color: white;
+}
+
+.page-header{
+	display: flex;
+	padding: 1%;
+	height: 78%;
+}
+
+.page-header img{
+	width: 150px;
+	height: 150px;
+}
+
+.page-subheader{
+	width: 100%;
+	padding: 1%;
+	background-color: var(--highlight);
+	text-align: center;
+}
+
+.page-subheader span{
+	width: auto;
+}
+
+.subheader-item{
+	background-color: #222A2F;
+	color: white;
+	width: auto;
+	padding: 7px 12px;
+	border-radius: 10px;
+	margin-right: 1%;
+	cursor: pointer;
+	transition-duration: 0.1s;	
+}
+
+.header-info{
+	width: 100%;
+	height: 100%;
+	word-break: break-word;
+	overflow-y: scroll;
+	padding: 0 5px;
+}
